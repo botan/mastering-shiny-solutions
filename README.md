@@ -1,13 +1,5 @@
-Welcome! 
+# Mastering Shiny Solutions
 
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). 
+This book contains my solutions to the exercises in Hadley Wickham’s book [Mastering Shiny](https://mastering-shiny.org/index.html). It was created as a workbook and resource for myself. 
 
-This template provides a skeleton file structure that you can edit to create your book. 
-
-The contents inside the .Rmd files provide some pointers to help you get started, but feel free to also delete the content in each file and start fresh.
-
-Additional resources:
-
-The **bookdown** book: https://bookdown.org/yihui/bookdown/
-
-The **bookdown** package reference site: https://pkgs.rstudio.com/bookdown
+If you are looking for more reliable solutions, I would recommend another [manual](https://mastering-shiny-solutions.org/) created by Maya Gans and Marly Gotti.
