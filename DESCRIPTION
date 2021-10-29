@@ -22,3 +22,5 @@ Imports:
     tidyr,
     tidyverse,
     vroom
+URL: https://github.com/botan/mastering-shiny-solutions
+BugReports: https://github.com/botan/mastering-shiny-solutions/issues
