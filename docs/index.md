@@ -12,43 +12,38 @@ biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
 
-# About
+# Welcome {-}
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+This book contains my solutions to the exercises in Hadley Wickham’s book [Mastering Shiny](https://mastering-shiny.org/index.html). It was set up as a workbook and resource for myself. If you are looking for more reliable solutions, I would recommend another [manual](https://mastering-shiny-solutions.org/) created by Maya Gans and Marly Gotti.
 
-## Usage 
+## Colophon {-}
 
-Each **bookdown** chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter *must* start with a first-level heading: `# A good chapter`, and can contain one (and only one) first-level heading.
+This book was written in [RStudio](http://www.rstudio.com/ide/) using [**bookdown**](http://bookdown.org/). The [website](https://botan.github.io/mastering-shiny-solutions/) is hosted via [GitHub Pages](https://pages.github.com/), and the complete source is available on [GitHub](https://github.com/botan/mastering-shiny-solutions).
 
-Use second-level and higher headings within chapters like: `## A short section` or `### An even shorter section`.
-
-The `index.Rmd` file is required, and is also your first book chapter. It will be the homepage when you render the book.
-
-## Render book
-
-You can render the HTML version of this example book without changing anything:
-
-1. Find the **Build** pane in the RStudio IDE, and
-
-1. Click on **Build Book**, then select your output format, or select "All formats" if you'd like to use multiple formats from the same book source files.
-
-Or build the book from the R console:
+This version of the book was built with R version 4.1.0 (2021-05-18) and the following packages:
 
 
-```r
-bookdown::render_book()
 ```
-
-To render this example to PDF as a `bookdown::pdf_book`, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>.
-
-## Preview book
-
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in "Preview book", or from the R console:
-
-
-```r
-bookdown::serve_book()
+#> Warning in readLines(f, n): incomplete final line found on
+#> '/Users/botan/projects/mastering-shiny-solutions/DESCRIPTION'
+#> Warning in readLines(file): incomplete final line found on
+#> '/Users/botan/projects/mastering-shiny-solutions/DESCRIPTION'
 ```
 
 
 
+|package   |version    |source                              |
+|:---------|:----------|:-----------------------------------|
+|bookdown  |0.24       |standard (\@0.24)                   |
+|dplyr     |1.0.7      |standard (\@1.0.7)                  |
+|forcats   |0.5.1      |standard (\@0.5.1)                  |
+|ggplot2   |3.3.5      |standard (\@3.3.5)                  |
+|purrr     |0.3.4      |CRAN (R 4.1.0)                      |
+|reactable |0.2.3      |standard (\@0.2.3)                  |
+|readr     |2.0.2      |standard (\@2.0.2)                  |
+|shiny     |1.7.1      |standard (\@1.7.1)                  |
+|stringr   |1.4.0.9000 |Github (tidyverse/stringr\@f030ae0) |
+|tibble    |3.1.5      |standard (\@3.1.5)                  |
+|tidyr     |1.1.4      |standard (\@1.1.4)                  |
+|tidyverse |1.3.1      |standard (\@1.3.1)                  |
+|vroom     |1.5.5      |standard (\@1.5.5)                  |
