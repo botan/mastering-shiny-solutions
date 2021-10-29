@@ -23,15 +23,6 @@ This book was written in [RStudio](http://www.rstudio.com/ide/) using [**bookdow
 This version of the book was built with R version 4.1.0 (2021-05-18) and the following packages:
 
 
-```
-#> Warning in readLines(f, n): incomplete final line found on
-#> '/Users/botan/projects/mastering-shiny-solutions/DESCRIPTION'
-#> Warning in readLines(file): incomplete final line found on
-#> '/Users/botan/projects/mastering-shiny-solutions/DESCRIPTION'
-```
-
-
-
 |package   |version    |source                              |
 |:---------|:----------|:-----------------------------------|
 |bookdown  |0.24       |standard (\@0.24)                   |
