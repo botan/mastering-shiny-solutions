@@ -12,9 +12,9 @@ biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
 
-# About
+# Welcome {-}
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
+This book contains my solutions to the exercises in Hadley Wickham’s book [Mastering Shiny](https://mastering-shiny.org/index.html). It was set up as a workbook and resource for myself. If you are looking for more reliable solutions, I would recommend another [manual](https://mastering-shiny-solutions.org/) created by Maya Gans and Marly Gotti.
 
 ## Usage 
 
