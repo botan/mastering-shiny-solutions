@@ -61,7 +61,7 @@ shinyApp(ui, server)
 
 But unfortunately it has an error:
 
-<img src="images/01-your-first-shiny-app/x-times-5.png" width="150" />
+<img src="images/01-your-first-shiny-app/x-times-5.png" width="50%" />
 
 Can you help them find and correct the error?
 
@@ -88,7 +88,7 @@ shinyApp(ui, server)
 
 **E3:** Extend the app from the previous exercise to allow the user to set the value of the multiplier, `y`, so that the app yields the value of `x * y`. The final result should look like this:
 
-<img src="images/01-your-first-shiny-app/x-times-y.png" width="150" />
+<img src="images/01-your-first-shiny-app/x-times-y.png" width="50%" />
 
 **Solution:** 
 
