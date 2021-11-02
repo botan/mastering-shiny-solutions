@@ -31,6 +31,7 @@ This version of the book was built with R version 4.1.0 (2021-05-18) and the fol
 |dplyr     |1.0.7      |CRAN (R 4.1.0)                      |
 |forcats   |0.5.1      |CRAN (R 4.1.0)                      |
 |ggplot2   |3.3.5      |CRAN (R 4.1.0)                      |
+|knitr     |1.36       |CRAN (R 4.1.0)                      |
 |purrr     |0.3.4      |CRAN (R 4.1.0)                      |
 |reactable |0.2.3      |CRAN (R 4.1.0)                      |
 |readr     |2.0.2      |CRAN (R 4.1.0)                      |

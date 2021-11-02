@@ -56,12 +56,11 @@ sliderInput(
 selectInput(
   "movie",
   "Select your favourite action movie:",
-  choices =
-    list(
-      "Chose one" = "", # placeholder
-      "Guy Ritchie" = list('Lock, Stock, and Two Smoking Barrels', 'Snatch', 'RocknRolla'),
-      "Quentin Tarantino" = list('Reservoir Dogs', 'Pulp Fiction', 'Kill Bill')
-    )
+  choices = list(
+    "Chose one" = "", # placeholder
+    "Guy Ritchie" = list('Lock, Stock, and Two Smoking Barrels', 'Snatch', 'RocknRolla'),
+    "Quentin Tarantino" = list('Reservoir Dogs', 'Pulp Fiction', 'Kill Bill')
+  )
 )
 ```
 
