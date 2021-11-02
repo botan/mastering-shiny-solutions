@@ -1,5 +1,7 @@
 your-first-shiny-app
 basic-ui
+inputs
+outputs
 basic-reactivity
 case-study-er-injuries
 workflow

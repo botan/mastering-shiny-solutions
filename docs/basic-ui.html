@@ -6,15 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 2 Basic UI | Mastering Shiny Solutions</title>
 <meta name="author" content="Botan Ağın">
-<meta name="description" content="Solutions to the Exercises in Hadley Wickham’s book ‘Mastering Shiny’">
+<meta name="description" content="2.1 Inputs E1: When space is at a premium, it’s useful to label text boxes using a placeholder that appears inside the text entry area. How do you call textInput() to generate the UI below?...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Basic UI | Mastering Shiny Solutions">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://botan.github.io/mastering-shiny-solutions/basic-ui.html">
-<meta property="og:description" content="Solutions to the Exercises in Hadley Wickham’s book ‘Mastering Shiny’">
+<meta property="og:description" content="2.1 Inputs E1: When space is at a premium, it’s useful to label text boxes using a placeholder that appears inside the text entry area. How do you call textInput() to generate the UI below?...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 2 Basic UI | Mastering Shiny Solutions">
-<meta name="twitter:description" content="Solutions to the Exercises in Hadley Wickham’s book ‘Mastering Shiny’">
+<meta name="twitter:description" content="2.1 Inputs E1: When space is at a premium, it’s useful to label text boxes using a placeholder that appears inside the text entry area. How do you call textInput() to generate the UI below?...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -79,14 +79,77 @@
 <h1>
 <span class="header-section-number">2</span> Basic UI<a class="anchor" aria-label="anchor" href="#basic-ui"><i class="fas fa-link"></i></a>
 </h1>
+<div id="inputs" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Inputs<a class="anchor" aria-label="anchor" href="#inputs"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>E1:</strong> When space is at a premium, it’s useful to label text boxes using a placeholder that appears <em>inside</em> the text entry area. How do you call <code><a href="https://rdrr.io/pkg/shiny/man/textInput.html">textInput()</a></code> to generate the UI below?</p>
+<div class="inline-figure"><img src="images/02-basic-ui/placeholder.png" width="%40"></div>
+<p><strong>Solution:</strong></p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/textInput.html">textInput</a></span><span class="op">(</span><span class="st">"text"</span>, <span class="st">""</span>, placeholder <span class="op">=</span> <span class="st">"Your name"</span><span class="op">)</span></code></pre></div>
+<p><strong>E2:</strong> Carefully read the documentation for <code><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput()</a></code> to figure out how to create a date slider, as shown below.</p>
+<div class="inline-figure"><img src="images/02-basic-ui/date-slider.png" width="%40"></div>
+<p><strong>Solution:</strong></p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span>
+  <span class="st">"delivery"</span>,
+  <span class="st">"When should we deliver?"</span>,
+  min <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2020-09-16"</span><span class="op">)</span>,
+  max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2020-09-23"</span><span class="op">)</span>,
+  value <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2021-09-17"</span><span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+<p><strong>E3:</strong> Create a slider input to select values between 0 and 100 where the interval between each selectable value on the slider is 5. Then, add animation to the input widget so when the user presses play the input widget scrolls through the range automatically.</p>
+<p><strong>Solution:</strong></p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/sliderInput.html">sliderInput</a></span><span class="op">(</span>
+  <span class="st">"number"</span>, 
+  <span class="st">"Select a number:"</span>,
+  min <span class="op">=</span> <span class="fl">0</span>, 
+  max <span class="op">=</span> <span class="fl">100</span>, 
+  value <span class="op">=</span> <span class="fl">0</span>, 
+  step <span class="op">=</span> <span class="fl">5</span>, 
+  animate <span class="op">=</span> <span class="cn">TRUE</span>
+<span class="op">)</span></code></pre></div>
+<p><strong>E4:</strong> If you have a moderately long list in a <code><a href="https://rdrr.io/pkg/shiny/man/selectInput.html">selectInput()</a></code>, it’s useful to create sub-headings that break the list up into pieces. Read the documentation to figure out how. (Hint: the underlying HTML is called <code>&lt;optgroup&gt;</code>.)</p>
+<p><strong>Solution:</strong></p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/selectInput.html">selectInput</a></span><span class="op">(</span>
+  <span class="st">"movie"</span>,
+  <span class="st">"Select your favourite action movie:"</span>,
+  choices <span class="op">=</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>
+      <span class="st">"Chose one"</span> <span class="op">=</span> <span class="st">""</span>, <span class="co"># placeholder</span>
+      <span class="st">"Guy Ritchie"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">'Lock, Stock, and Two Smoking Barrels'</span>, <span class="st">'Snatch'</span>, <span class="st">'RocknRolla'</span><span class="op">)</span>,
+      <span class="st">"Quentin Tarantino"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">'Reservoir Dogs'</span>, <span class="st">'Pulp Fiction'</span>, <span class="st">'Kill Bill'</span><span class="op">)</span>
+    <span class="op">)</span>
+<span class="op">)</span></code></pre></div>
+</div>
+<div id="outputs" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Outputs<a class="anchor" aria-label="anchor" href="#outputs"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>E1:</strong></p>
+<p><strong>Solution:</strong></p>
+<p><strong>E2:</strong></p>
+<p><strong>Solution:</strong></p>
+<p><strong>E3:</strong></p>
+<p><strong>Solution:</strong></p>
+<p><strong>E4:</strong></p>
+<p><strong>Solution:</strong></p>
 
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="your-first-shiny-app.html"><span class="header-section-number">1</span> Your First Shiny App</a></div>
 <div class="next"><a href="basic-reactivity.html"><span class="header-section-number">3</span> Basic Reactivity</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#basic-ui"><span class="header-section-number">2</span> Basic UI</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#basic-ui"><span class="header-section-number">2</span> Basic UI</a></li>
+<li><a class="nav-link" href="#inputs"><span class="header-section-number">2.1</span> Inputs</a></li>
+<li><a class="nav-link" href="#outputs"><span class="header-section-number">2.2</span> Outputs</a></li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">
@@ -103,7 +166,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Mastering Shiny Solutions</strong>" was written by Botan Ağın. It was last built on 2021-11-01.</p>
+    <p>"<strong>Mastering Shiny Solutions</strong>" was written by Botan Ağın. It was last built on 2021-11-02.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
