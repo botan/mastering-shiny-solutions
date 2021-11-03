@@ -34,7 +34,7 @@ sliderInput(
 
 **E3:** Create a slider input to select values between 0 and 100 where the interval between each selectable value on the slider is 5. Then, add animation to the input widget so when the user presses play the input widget scrolls through the range automatically.
 
-**Solution:** 
+**Solution:**
 
 ```{r, eval=FALSE}
 sliderInput(
@@ -48,7 +48,7 @@ sliderInput(
 )
 ```
 
-**E4:** If you have a moderately long list in a `selectInput()`, it’s useful to create sub-headings that break the list up into pieces. Read the documentation to figure out how. (Hint: the underlying HTML is called `<optgroup>`.)
+**E4:** If you have a moderately long list in a `selectInput()`, it's useful to create sub-headings that break the list up into pieces. Read the documentation to figure out how. (Hint: the underlying HTML is called `<optgroup>`.)
 
 **Solution:**
 
@@ -66,18 +66,117 @@ selectInput(
 
 ## Outputs
 
-**E1:**
+**E1:** Which of `textOutput()` and `verbatimTextOutput()` should each of the following render functions be paired with?
+
+a.  `renderPrint(summary(mtcars))`
+
+b.  `renderText("Good morning!")`
+
+c.  `renderPrint(t.test(1:5, 2:6))`
+
+d.  `renderText(str(lm(mpg ~ wt, data = mtcars)))`
 
 **Solution:**
 
-**E2:**
+```{r, eval=FALSE}
+library(shiny)
+
+ui <- fluidPage(
+  verbatimTextOutput("summary"),
+  textOutput("text"),
+  verbatimTextOutput("t_test"),
+  verbatimTextOutput("lm")
+)
+
+server <- function(input, output, session) {
+  output$summary <- renderPrint(summary(mtcars))
+  output$text <- renderText("Good morning!")
+  output$t_test <- renderPrint(t.test(1:5, 2:6))
+  output$lm <- renderPrint(str(lm(mpg ~ wt, data = mtcars)))
+}
+
+shinyApp(ui, server)
+```
+
+
+**E2:** Re-create the Shiny app from Section **2.3.3**, this time setting height to 300px and width to 700px. Set the plot “alt” text so that a visually impaired user can tell that its a scatterplot of five random numbers.
 
 **Solution:**
 
-**E3:**
+```{r, eval=FALSE}
+library(shiny)
+
+ui <- fluidPage(
+  plotOutput(
+    "plot", 
+    width = "400px", 
+    height = "700px",
+    alt = "A scatterplot of five random numbers."
+  )
+)
+
+server <- function(input, output, session) {
+  output$plot <- renderPlot(plot(1:5), res = 96)
+}
+
+shinyApp(ui, server)
+```
+
+**E3:** Update the options in the call to `renderDataTable()` below so that the data is displayed, but all other controls are suppress (i.e. remove the search, ordering, and filtering commands). You'll need to read `?renderDataTable` and review the options at <https://datatables.net/reference/option/>.
+
+```{r, eval=FALSE}
+ui <- fluidPage(
+  dataTableOutput("table")
+)
+
+server <- function(input, output, session) {
+  output$table <- renderDataTable(mtcars, options = list(pageLength = 5))
+}
+```
 
 **Solution:**
 
-**E4:**
+```{r, eval=FALSE}
+ui <- fluidPage(
+  dataTableOutput("table")
+)
+
+server <- function(input, output, session) {
+  output$table <- renderDataTable(
+    mtcars, 
+    options = list(
+      pageLength = 5, 
+      searching = FALSE,
+      ordering = FALSE,
+      filtering = FALSE
+    )
+  )
+}
+```
+
+**E4:** Alternatively, read up on [reactable](https://glin.github.io/reactable), and convert the above app to use it instead.
 
 **Solution:**
+
+```{r, eval=FALSE}
+library(shiny)
+library(reactable)
+
+ui <- fluidPage(
+  reactableOutput("reactable")
+)
+
+server <- function(input, output, session) {
+  output$reactable <- renderReactable({
+    reactable(
+      mtcars,
+      searchable = FALSE, # default
+      sortable = FALSE,
+      filterable = FALSE, # default
+      defaultPageSize = 5
+    )
+  })
+}
+
+shinyApp(ui, server)
+```
