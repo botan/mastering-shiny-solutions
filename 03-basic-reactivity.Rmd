@@ -70,19 +70,19 @@ server3 <- function(input, output, session) {
 
 `server1`
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/03-basic-reactivity/server1.png")
 ```
 
 `server2`
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/03-basic-reactivity/server2.png")
 ```
 
 `server3`
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width='100%'}
 knitr::include_graphics("images/03-basic-reactivity/server3.png")
 ```
 
