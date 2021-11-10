@@ -1,7 +1,7 @@
 --- 
 title: "Mastering Shiny Solutions"
 author: "Botan Ağın"
-date: "2021-11-03"
+date: "2021-11-10"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -37,7 +37,7 @@ This version of the book was built with R version 4.1.0 (2021-05-18) and the fol
 |readr     |2.0.2      |CRAN (R 4.1.0)                      |
 |shiny     |1.7.1      |CRAN (R 4.1.0)                      |
 |stringr   |1.4.0.9000 |Github (tidyverse/stringr\@f030ae0) |
-|tibble    |3.1.5      |CRAN (R 4.1.0)                      |
+|tibble    |3.1.6      |CRAN (R 4.1.0)                      |
 |tidyr     |1.1.4      |CRAN (R 4.1.0)                      |
 |tidyverse |1.3.1      |CRAN (R 4.1.0)                      |
-|vroom     |1.5.5      |CRAN (R 4.1.0)                      |
+|vroom     |1.5.6      |CRAN (R 4.1.0)                      |
