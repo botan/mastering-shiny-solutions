@@ -70,19 +70,19 @@ server3 <- function(input, output, session) {
 
 `server1`
 
-```{r, echo=FALSE, out.height='%60'}
+```{r, echo=FALSE}
 knitr::include_graphics("images/03-basic-reactivity/server1.png")
 ```
 
 `server2`
 
-```{r, echo=FALSE, out.height='%60'}
+```{r, echo=FALSE}
 knitr::include_graphics("images/03-basic-reactivity/server2.png")
 ```
 
 `server3`
 
-```{r, echo=FALSE, out.height='%60'}
+```{r, echo=FALSE}
 knitr::include_graphics("images/03-basic-reactivity/server3.png")
 ```
 
@@ -97,6 +97,6 @@ Why are `range()` and `var()` bad names for reactive?
 
 **Solution:** 
 
-These names are already taken by `base::range()` and `stats::var()`. Using them for naming reactive expressions makes Shiny confused. In this case code will because when defining `range()` Shiny takes `var()` as a function instead of a reactive object.
+These names are already taken by `base::range()` and `stats::var()`. Using them for naming reactive expressions makes Shiny confused. In this case code will fail because when defining `range()` Shiny takes `var()` as a function instead of a reactive object.
 
 Overriding on existing functions or variables is bad practice. It may cause conflicts or errors, as just happened here.
